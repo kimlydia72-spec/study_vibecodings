@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테토 vs 에겐 성향 테스트</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 700px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question-card {
+            margin-bottom: 20px;
+        }
+        .answer-btn {
+            width: 100%;
+            margin-bottom: 10px;
+            white-space: normal; /* Allow text to wrap */
+            height: auto; /* Adjust height based on content */
+            padding: 15px;
+        }
+        .progress-bar-teto {
+            background-color: #0d6efd; /* Bootstrap primary blue */
+        }
+        .progress-bar-egen {
+            background-color: #dc3545; /* Bootstrap danger red */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="text-center">
+            <h1 class="mb-4">테토 vs 에겐 성향 테스트</h1>
+            <p class="lead mb-5">당신은 테토 성향에 가까운가요, 에겐 성향에 가까운가요? 몇 가지 질문을 통해 당신의 성향을 파악해보세요!</p>
+            <button id="start-btn" class="btn btn-primary btn-lg">시작하기</button>
+        </div>
+
+        <!-- Question Screen (initially hidden) -->
+        <div id="question-screen" class="d-none">
+            <h2 id="question-title" class="mb-4 text-center"></h2>
+            <div id="answers-container" class="d-grid gap-2">
+                <!-- Answers will be dynamically loaded here -->
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <button id="prev-btn" class="btn btn-secondary" disabled>이전</button>
+                <button id="next-btn" class="btn btn-primary">다음</button>
+            </div>
+        </div>
+
+        <!-- Result Screen (initially hidden) -->
+        <div id="result-screen" class="d-none text-center">
+            <h2 class="mb-4">당신의 성향 결과는?</h2>
+            <p class="lead mb-4" id="result-text"></p>
+
+            <div class="mb-3">
+                <h4 class="text-primary">테토 성향</h4>
+                <div class="progress" style="height: 30px;">
+                    <div id="teto-progress" class="progress-bar progress-bar-teto" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h4 class="text-danger">에겐 성향</h4>
+                <div class="progress" style="height: 30px;">
+                    <div id="egen-progress" class="progress-bar progress-bar-egen" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                </div>
+            </div>
+
+            <button id="restart-btn" class="btn btn-success btn-lg">다시 시작하기</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
